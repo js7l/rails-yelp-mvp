@@ -1,0 +1,11 @@
+<div class="container mt-5 col-6">
+  <h1>Restaurants</h1>
+  <ul><% @restaurants.each do |restaurant| %>
+    <li><%= link_to restaurant.name, restaurant, class:"text-decoration-none" %><%= link_to restaurant_path(restaurant),
+              method: :delete,
+              data: { confirm: "Are you sure?" } do %>
+              <i class="fas fa-trash-alt"></i>
+              <% end %></li>
+  <% end %></ul>
+  <button class="btn btn-secondary"><%= link_to "Create New", new_restaurant_path, class:"text-white" %></button>
+</div>
